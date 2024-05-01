@@ -106,5 +106,6 @@ try:
     else:
       print('Error: O número deve estar entre 5 e 20.')
 
-except ValueError as e:
+except ValueError s e:
     print("Erro:", e)
+    
