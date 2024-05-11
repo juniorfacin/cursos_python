@@ -1,48 +1,33 @@
-# Sintaxe
 class Restaurante:
-	nome = ''  # Esses são os atributos das classes
-	categoria = ''
-	ativo = False
+    restaurantes = []
 
-restaurante_praca = Restaurante()
-restaurante_praca.nome = 'Praça'
-restaurante_praca.categoria = 'Italiana'
-restaurante_praca.ativo = True
+    def __init__(self, nome, categoria):
+        self.nome = nome.title()
+        self.categoria = categoria.upper()
+         # Transformando em um atributo privado / acessado apenas com a Property
+        self._ativo = False
+        Restaurante.restaurantes.append(self)
+        
+    # Método str para retornar em string
+    def __str__(self):
+        return f'{self.nome} | {self.categoria}'
+    
+    # Estamos puxando as informações direto da lista que armazena o objeto.
+    @classmethod
+    def listar_restaurantes(cls):
+        print(f'{'Nome do restaurante'.ljust(25)} | {'Categoria'.ljust(25)} | {'Status'}')
+        for restaurante in Restaurante.restaurantes:
+            print(f'{restaurante.nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo}')
+    
+    @property
+    def ativo(self):
+        return '✅' if self._ativo else '❎'
+    
+    def alternar_estado(self):
+        self._ativo = not self._ativo
 
-# 1
-print(f'Nome: {restaurante_praca.nome}')
+restaurante_praca = Restaurante('Praça', 'Gourmet')
+restaurante_praca.alternar_estado()
+restaurante_pizza = Restaurante('Pizza Express', 'Italiana')
 
-# 2
-print(restaurante_praca.ativo)
-if restaurante_praca.ativo == True:
-	print('O restaurante está ativo!')
-else:
-	print('O restaurante está inativo.')
-
-# 3 e 4
-# Alterar o atributo da classe fora dela - Não é uma boa prática
-Restaurante.categoria = 'Italiana'
-categoria = Restaurante.categoria
-print(categoria)
-
-# 5
-restaurante_praca.nome = 'Bistrô'
-print(restaurante_praca.nome)
-
-# 6
-restaurante_pizza = Restaurante()
-restaurante_pizza.nome = 'Pizza Place'
-restaurante_pizza.categoria = 'Fast Food'
-print(f'Esse é o novo restaurante "{restaurante_pizza.nome}" na categoria "{restaurante_pizza.categoria}"')
-
-# 7
-if restaurante_pizza.categoria == 'Fast Food':
-	print(f'Categoria correta: "{restaurante_pizza.categoria}"')
-else:
-	print('Categoria incorreta, verificar.')
-
-# 8
-restaurante_pizza.ativo = True
-
-# 9
-print(f'Nome: {restaurante_praca.nome}, Categoria: {restaurante_praca.categoria}')
+Restaurante.listar_restaurantes()
