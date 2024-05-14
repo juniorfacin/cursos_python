@@ -13,8 +13,11 @@ Esta é uma formação ministrada pela [Alura]("https://www.alura.com.br") com a
 
 ## 2. Orientação a objetos
 
-### *Python: aplicando a Orientação a Objeos*
+### *Python: aplicando a Orientação a Objetos*
 
+- Importância da Orientação a Objetos com Python.
+- Classes e Atributos.
+- Métodos estáticos e encapsulamento.
 
 ## 3. Ambientes virtuais, arquivos e APIS
 
