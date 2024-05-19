@@ -23,6 +23,11 @@ Esta é uma formação ministrada pela [Alura]("https://www.alura.com.br") com a
 
 ### *Python: avance na Orientação a Objetos e Consuma API*
 
+- Implementação de herança e classes abstratas.
+- Conceito de Polimorfismo.
+- Integração do projeto com API.
+- Criação de arquivos JSON e ambientes virtuais em Python.
+
 ##  Tecnologias Utilizadas
 
 <div style="display: inline_block">
